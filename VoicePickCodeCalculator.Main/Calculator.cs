@@ -6,12 +6,15 @@ namespace VoicePickCodeCalculator.Main
 {
     public static class Calculator
     {
-        public static Result<string> GetVoicePickCode(string gtin, string lote, string dataEmbalagem)
+        public static Result<string> GetVoicePickCode(string gtin, string lote, string dataEmbalagem = null)
         {
-            if (string.IsNullOrEmpty(gtin) || string.IsNullOrEmpty(lote) || string.IsNullOrEmpty(dataEmbalagem))
-                return Result.Error<string>(new Exception("Properties cannot be null or empty"));            
-                
-            var crc = Crc16.ComputeChecksum(Encoding.ASCII.GetBytes(
+            if (string.IsNullOrEmpty(gtin) || string.IsNullOrEmpty(lote))
+                return Result.Error<string>(new Exception("Properties cannot be null or empty"));
+
+            var crc = string.IsNullOrEmpty(dataEmbalagem) ?
+                Crc16.ComputeChecksum(Encoding.ASCII.GetBytes(
+                     string.Format("{0}{1}", gtin, lote))) :
+                Crc16.ComputeChecksum(Encoding.ASCII.GetBytes(
                      string.Format("{0}{1}{2}", gtin, lote, dataEmbalagem)));
 
             if (!crc.IsSuccess)

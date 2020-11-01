@@ -10,6 +10,7 @@
     <Description>The Voice Pick Code is printed on the PTI label, and designed to integrate with the voice picking systems popular in large warehouse management systems (WMS). The Voice Pick Code itself is a 4 digit digest1 of the GTIN and Lot Code (and optional Date) that is calculated using a well proven, standard algorithm.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
