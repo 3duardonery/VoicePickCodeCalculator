@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>VoicePickCodeCalculator</PackageId>
+    <Authors>Eduardo Nery</Authors>
+    <Product>Voice Pick Calculator</Product>
+    <PackageProjectUrl>https://github.com/3duardonery/VoicePickCodeCalculator</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/3duardonery/VoicePickCodeCalculator</RepositoryUrl>
+    <Description>The Voice Pick Code is printed on the PTI label, and designed to integrate with the voice picking systems popular in large warehouse management systems (WMS). The Voice Pick Code itself is a 4 digit digest1 of the GTIN and Lot Code (and optional Date) that is calculated using a well proven, standard algorithm.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Divino.OperationResult" Version="2.0.1" />
+  </ItemGroup>
+
+</Project>
